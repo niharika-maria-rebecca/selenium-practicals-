@@ -1,0 +1,59 @@
+package expli;
+
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Expliclass {
+    public static void main(String[] args) {
+
+        // Set path to ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "/home/user/Downloads/chromedriver");
+
+        // Launch Chrome
+        WebDriver driver = new ChromeDriver();
+
+        // Explicit wait (not used in this simple example, but initialized)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+
+        // Expected title
+        String eTitle = "Google";
+
+        // Actual title
+        String aTitle = "";
+
+        // Open Google
+        driver.get("https://www.google.com");
+        driver.manage().window().maximize();
+
+        // Get page title
+        aTitle = driver.getTitle();
+
+        // Compare titles
+        if (aTitle.equals(eTitle)) {
+            System.out.println("Test Passed");
+        } else {
+            System.out.println("Test Failed");
+        }
+
+        // Close browser
+        driver.close();
+    }
+}System.out.println("Test passed");
+
+}
+
+else
+
+{
+
+System.out.println("Test failed");
+
+}
+
+driver.close();
+
+}
+
+}
